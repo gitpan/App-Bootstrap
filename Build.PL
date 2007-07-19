@@ -11,11 +11,18 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
-        'Text::Template' => 0,
-        'File::ShareDir' => 0,
-        'File::Path'     => 0,
     },
     add_to_cleanup      => [ 'App-Bootstrap-*' ],
 );
+
+print <<"END";
+########################################################################
+# This module has been renamed App::Install.  Go install that instead. #
+########################################################################
+
+Sleeping for 30 seconds now so you notice.  Hit Ctrl-C to quit.
+END
+
+sleep(30);
 
 $builder->create_build_script();
